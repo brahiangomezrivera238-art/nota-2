@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Pulse | Portal Pro</title>
+    <link rel="stylesheet" href="2videojuego.css">
+</head>
+<body>
+    <header>
+        <h1>🎮 GAMING PULSE NOTICIAS</h1>
+    </header>
+
+    <div class="grid-container">
+        <aside id="sidebar">
+            <div id="login-section" class="card-glass">
+                <h2>🔐 Acceso</h2>
+                <form id="loginForm">
+                    <input type="text" id="username" placeholder="Usuario (admin)" required>
+                    <input type="password" id="password" placeholder="Pass (1234)" required>
+                    <button type="submit" class="btn-neon">Entrar al Sistema</button>
+                    <p id="loginError" class="error-text">❌ Credenciales incorrectas</p>
+                </form>
+            </div>
+
+            <div id="editor-section" class="card-glass" style="display: none;">
+                <h2>✍️ Nuevo Post</h2>
+                <form id="postForm">
+                    <input type="text" id="postTitle" placeholder="Título de la noticia" required>
+                    <textarea id="postContent" placeholder="Breve descripción..." rows="3"></textarea>
+                    <input type="url" id="postImg" placeholder="URL Imagen (https://...)" required>
+                    <select id="postCategory">
+                        <option value="Noticias">Noticias</option>
+                        <option value="Reseñas">Reseñas</option>
+                        <option value="Hardware">Hardware</option>
+                    </select>
+                    <button type="submit" class="btn-neon">Publicar</button>
+                    <button type="button" onclick="logout()" class="btn-logout">Cerrar Sesión</button>
+                </form>
+            </div>
+        </aside>
+
+        <main id="news-feed">
+            <div class="feed-header">
+                <h2>📢 Publicaciones Recientes</h2>
+                <select id="filterCategory" class="filter-select">
+                    <option value="todos">Filtrar por categoría</option>
+                    <option value="Noticias">Noticias</option>
+                    <option value="Reseñas">Reseñas</option>
+                    <option value="Hardware">Hardware</option>
+                </select>
+            </div>
+            <div id="postsContainer" class="posts-grid"></div>
+        </main>
+    </div>
+
+    <script src="3videojuego.js"></script>
+</body>
+</html>
